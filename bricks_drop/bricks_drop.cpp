@@ -20,7 +20,7 @@ double startNum = 1; //създавам глобална помощна пром
                      //която да използвам за генериране на случайно число
 
 unsigned randomNumberGenerator() {
-    unsigned numberGenerator = 977;
+    unsigned numberGenerator = 97;
     double generateNum = startNum / numberGenerator;
     startNum++;
     int endNum = generateNum * 10000000;
@@ -280,17 +280,22 @@ void surchBrickForFall(char field[][8], const char bricksMatrix[]) {
     
 }
 
-void firstMove(char field[][8], const char bricksMatrix[],  
-               int currentCountOfBricks, int& counterOfPoints) {
-    int countOfBricksPerRow = (randomNumberGenerator() % 4 + 1);
-    generateFirstRow(field, bricksMatrix, countOfBricksPerRow, currentCountOfBricks);
+void isRowFull(char field[][8], int& counterOfPoints) {
     int fullRow = isAnyLineFull(field);
     if (fullRow) {
         moveRowDown(field, fullRow);
         counterOfPoints += 10;
     }
-    
 }
+
+void firstMove(char field[][8], const char bricksMatrix[],  
+               int currentCountOfBricks, int& counterOfPoints) {
+    int countOfBricksPerRow = (randomNumberGenerator() % 4 + 1);
+    generateFirstRow(field, bricksMatrix, countOfBricksPerRow, currentCountOfBricks);
+    isRowFull(field, counterOfPoints);  
+}
+
+
 
 void playGame(char field[][8], const char bricksMatrix[]) {
     char player[20];
@@ -318,6 +323,10 @@ void playGame(char field[][8], const char bricksMatrix[]) {
         moveRowUp(field);
         firstMove(field, bricksMatrix, currentCountOfBricks, counterOfPoints);
         surchBrickForFall(field, bricksMatrix);
+        isRowFull(field, counterOfPoints);
+        if(isRowEmpty(field, 9)) {
+            continue;
+        }
         printMatrix(field);
         cout << "Your current points are: " << counterOfPoints << endl;
     }
