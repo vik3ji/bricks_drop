@@ -1,8 +1,0 @@
-﻿  bricks_drop.cpp
-C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\bricks_drop\bricks_drop.cpp(26,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\bricks_drop\bricks_drop.cpp(180,31): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\bricks_drop\bricks_drop.cpp(181,20): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\bricks_drop\bricks_drop.cpp(32): warning C4715: 'randomNumberGenerator': not all control paths return a value
-C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\bricks_drop\bricks_drop.cpp(51): warning C4715: 'randomColorGenerator': not all control paths return a value
-C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\bricks_drop\bricks_drop.cpp(229): warning C4715: 'isDataFromUserValid': not all control paths return a value
-  bricks_drop.vcxproj -> C:\Users\VIKI\Desktop\Университет\УП\bricks_drop\x64\Debug\bricks_drop.exe
